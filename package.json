@@ -1,13 +1,13 @@
 {
   "name": "@djforth/viewport-detection-fp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:djforth/viewport-detection-fp.git",
   "author": "Adrian Stainforth <adrian.stainforth@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "BABEL_ENV=production babel src -x '.js','.jsx' -d lib",
-    "build:watch": "BABEL_ENV=production  babel src -x '.js','.jsx' -w --source-maps -d lib --production",
+    "build:watch": "BABEL_ENV=production  babel src -x '.js','.jsx' -w --source-maps -d lib",
     "js": "webpack --config config/webpack/production.js",
     "lint": "eslint src/** --fix",
     "lint:tests": "eslint __tests__/** --fix",

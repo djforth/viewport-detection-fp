@@ -11,8 +11,8 @@ const isTouchDevice = ()=>{
 export default (breakpoints)=>{
   breakpoints = breakpoints || {
     mobile: {min: 0, max: 767}
-    , tablet: {max: 768, max: 992}
-    , desktop: {max: 993, max: null}
+    , tablet: {min: 768, max: 992}
+    , desktop: {min: 993, max: null}
   };
 
   let device = ManageDevice(breakpoints);
@@ -30,7 +30,6 @@ export default (breakpoints)=>{
       if (Object.prototype.toString.call(cb) === '[object Function]'){
         cb = [cb];
       }
-
       callbacks = callbacks.concat(cb);
 
       return obj;
@@ -42,9 +41,10 @@ export default (breakpoints)=>{
       return deviceWidth;
     }
     , track(){
-      TrackChange(()=>{
+      TrackChange((e)=>{
         let width = window.innerWidth;
-        if (changeCheck(window.innerWidth)){
+        let check = changeCheck(width);
+        if (check){
           deviceWidth = width;
           callbacks.forEach((cb)=>{
             cb(device(), width);
