@@ -1,0 +1,48 @@
+{
+  "plugins": [
+    ["transform-class-properties", { "spec": true }]
+  ],
+  "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    "es2016",
+    "es2017",
+    [
+      "env",
+      {
+        modules: 'umd',
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "chrome >= 55",
+            "IE >= 11"
+          ]
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "istanbul",
+          {
+            "exclude": [
+              "**/*.spec.js"
+            ]
+          }
+        ],
+        "rewire"
+      ]
+    },
+    "production": {
+      "presets": [
+        "babili"
+      ]
+    }
+  }
+}
