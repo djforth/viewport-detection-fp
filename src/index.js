@@ -25,6 +25,8 @@ export default (breakpoints)=>{
     , deviceWidth
   );
 
+  changeCheck(deviceWidth);
+
   const obj = {
     addCallback(cb){
       if (Object.prototype.toString.call(cb) === '[object Function]'){

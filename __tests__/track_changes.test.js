@@ -1,6 +1,7 @@
 import TrackChanges from 'track_changes';
 import SimulateEvent from './__helpers__/simulate_event';
 
+
 describe('TrackChanges', ()=>{
   let spy;
 
