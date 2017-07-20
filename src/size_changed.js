@@ -14,6 +14,7 @@ const CheckDevice = (breakpoints)=>(width)=>{
 export default (breakpoints, device, width)=>{
   let currentWidth = width;
   const checker = CheckDevice(breakpoints);
+  device(checker(currentWidth));
   return (changeWidth)=>{
     if (changeWidth === currentWidth) return false;
     currentWidth = changeWidth;
