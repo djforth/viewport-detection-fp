@@ -14,7 +14,7 @@
     [
       "env",
       {
-        modules: 'umd',
+        modules: false,
         "targets": {
           "browsers": [
             "last 2 versions",
