@@ -1,18 +1,2 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.viewportDetection = factory());
-}(this, (function () { 'use strict';
-
-var include=function(a,b){return-1!=a.indexOf(b)};var ManageDevice = (function(a){var b='mobile',c=Object.keys(a);return function(a){return(console.log('device',a),!include(c,a))?b:(b=a,b)}});
-
-var TrackChange = (function(a){window.addEventListener('resize',a,!1),window.addEventListener('orientationchange',a,!1);});
-
-var CheckDevice=function(a){return function(b){for(var f in a)if(a[f]){var c=a[f],d=c.min,e=c.max;if(null===e&&b>d)return f;if(b>d&&b<e)return f}return null}};var SizeChanged = (function(a,b,c){var d=c,e=CheckDevice(a);return b(e(d)),function(a){if(a===d)return!1;d=a;var c=e(d);return null!==c&&b()!==c&&(b(c),!0)}});
-
-var isTouchDevice=function(){return'ontouchstart'in window||navigator.maxTouchPoints};var index = (function(a){a=a||{mobile:{min:0,max:767},tablet:{min:768,max:992},desktop:{min:993,max:null}};var b=ManageDevice(a),c=window.innerWidth,d=[],e=isTouchDevice(),f=SizeChanged(a,b,c),g={addCallback:function addCallback(a){return'[object Function]'===Object.prototype.toString.call(a)&&(a=[a]),d=d.concat(a),g},getDevice:function getDevice(){return b()},getWidth:function getWidth(){return c},track:function track(){TrackChange(function(){var a=window.innerWidth,e=f(a);e&&(c=a,d.forEach(function(c){c(b(),a);}));});},touchAvailabile:function touchAvailabile(){return e}};return g});
-
-return index;
-
-})));
+!function(n,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):n.viewportDetection=t()}(this,function(){"use strict";var n=function(n,t){return-1!=n.indexOf(t)},t=function(t){var e="mobile",i=Object.keys(t);return function(t){return console.log("device",t),n(i,t)?e=t:e}},e=function(n){window.addEventListener("resize",n,!1),window.addEventListener("orientationchange",n,!1)},i=function(n){return function(t){for(var e in n)if(n[e]){var i=n[e],r=i.min,o=i.max;if(null===o&&t>r)return e;if(t>r&&t<o)return e}return null}},r=function(n,t,e){var r=e,o=i(n);return t(o(r)),function(n){if(n===r)return!1;var e=o(r=n);return null!==e&&t()!==e&&(t(e),!0)}},o=function(){return"ontouchstart"in window||navigator.maxTouchPoints};return function(n){var i=t(n=n||{mobile:{min:0,max:767},tablet:{min:768,max:992},desktop:{min:993,max:null}}),u=window.innerWidth,c=[],f=o(),a=r(n,i,u),d={addCallback:function(n){return"[object Function]"===Object.prototype.toString.call(n)&&(n=[n]),c=c.concat(n),d},getDevice:function(){return i()},getWidth:function(){return u},track:function(){e(function(){var n=window.innerWidth;a(n)&&(u=n,c.forEach(function(t){t(i(),n)}))})},touchAvailabile:function(){return f}};return d}});
 //# sourceMappingURL=index.js.map
