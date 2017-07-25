@@ -16,7 +16,7 @@ describe('Main Viewport detection method', ()=>{
   });
 
   test('Should return device', ()=>{
-    expect(vp.getDevice()).toEqual('mobile');
+    expect(vp.getDevice()).toEqual('desktop');
   });
 
   test('Should return width', ()=>{

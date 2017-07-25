@@ -21,7 +21,7 @@ describe('SizeChanged', ()=>{
 
   test('should return false if size matches', ()=>{
     expect(tracker(500)).toBeFalsy();
-    expect(device).not.toHaveBeenCalled();
+    expect(device).toHaveBeenCalledTimes(1);
   });
 
   test('should return false if device matches', ()=>{
@@ -31,13 +31,13 @@ describe('SizeChanged', ()=>{
 
   test('should return true if device changed to tablet', ()=>{
     expect(tracker(900)).toBeTruthy();
-    expect(device).toHaveBeenCalledTimes(2);
+    expect(device).toHaveBeenCalledTimes(3);
     expect(device).toHaveBeenLastCalledWith('tablet');
   });
 
   test('should return true if device changed to desktop', ()=>{
     expect(tracker(1000)).toBeTruthy();
-    expect(device).toHaveBeenCalledTimes(2);
+    expect(device).toHaveBeenCalledTimes(3);
     expect(device).toHaveBeenLastCalledWith('desktop');
   });
 });
