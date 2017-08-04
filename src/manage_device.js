@@ -6,7 +6,6 @@ export default (breakpoints)=>{
   let expected = Object.keys(breakpoints);
 
   return (d)=>{
-    console.log('device', d)
     if (!include(expected, d)) return device;
     device = d;
     return device;
