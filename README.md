@@ -2,6 +2,8 @@
 
 A small vanilla utility to track changes to viewport.
 
+[![Build Status](https://semaphoreci.com/api/v1/djforth/viewport-detection-fp/branches/master/badge.svg)](https://semaphoreci.com/djforth/viewport-detection-fp)
+
 ## Install
 
 ```
