@@ -1,20 +1,26 @@
 import ManageDevice from 'manage_device';
 
-describe('ManageDevice', ()=>{
+describe('ManageDevice', () => {
   let device;
-  beforeAll(()=>{
-    device = ManageDevice({mobile: 'iphone', tablet: 'iPad', desktop: 'macbook'});
+  let breakpoints = {
+    mobile: { min: 0, max: 767 },
+    tablet: { min: 768, max: 992 },
+    desktop: { min: 993, max: null },
+  };
+
+  beforeAll(() => {
+    device = ManageDevice(breakpoints, 800);
   });
 
-  test('Default should return mobile', ()=>{
-    expect(device()).toEqual('mobile');
+  test('Default should tablet', () => {
+    expect(device()).toEqual('tablet');
   });
 
-  test('should change the device if expected device', ()=>{
+  test('should change the device if expected device', () => {
     expect(device('tablet')).toEqual('tablet');
   });
 
-  test('will not change the device if not expected device', ()=>{
-    expect(device('phablet')).toEqual('tablet')
+  test('will not change the device if not expected device', () => {
+    expect(device('phablet')).toEqual('tablet');
   });
 });

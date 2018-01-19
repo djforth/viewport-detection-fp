@@ -22,8 +22,8 @@ Default breakpoints
 Device | Min width | Max width
 :-------|:-------|:-------
 Mobile | 0 | 767
-Tablet | 768 | 992
-Desktop | 993 | -
+Tablet | 768 | 1023
+Desktop | 1024 | -
 
 Basic set up (es6)
 
@@ -60,7 +60,7 @@ vpDetect.getWidth() // Will return current widow width
 ### touchAvailable
 
 ```javascript
-vpDetect.touchAvailabile() // Will return boolean if touch is available
+vpDetect.touchAvailable() // Will return boolean if touch is available
 ```
 
 ### Set additional/different breakpoints
@@ -70,9 +70,9 @@ vpDetect.touchAvailabile() // Will return boolean if touch is available
 const newBreakpoints = {
   mobileSm: {min: 0, max: 480}
   , mobileLg: {min: 481, max: 767}
-  , tablet: {min: 768, max: 992}
-  , desktop: {min: 993, max: 1048}
-  , tv: {min: 1048, max: null}
+  , tablet: {min: 768, max: 1023}
+  , desktop: {min: 1024, max: 1199}
+  , tv: {min: 1200, max: null}
 }
 
 const vpDetect = ViewportDetect(newBreakpoints);

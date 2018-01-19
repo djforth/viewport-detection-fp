@@ -1,10 +1,5 @@
+export default tracker => {
+  window.addEventListener('resize', tracker, false);
 
-export default (tracker)=>{
-  window.addEventListener(
-    'resize', tracker, false
-  );
-
-  window.addEventListener(
-    'orientationchange', tracker, false
-  );
+  window.addEventListener('orientationchange', tracker, false);
 };

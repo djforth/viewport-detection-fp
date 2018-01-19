@@ -4,16 +4,18 @@ import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
-  entry: 'src/index.js'
-  , format: 'umd'
-  , moduleName: 'viewportDetection'
-  , sourceMap: true
-  , plugins: [
-    resolve()
-    , babel({
-      exclude: 'node_modules/**' // only transpile our source code
-    })
-    , uglify()
-  ]
-  , dest: 'index.js'
+  input: 'src/index.js',
+  output: {
+    file: 'index.js',
+    format: 'umd',
+    name: 'viewportDetection',
+    sourcemap: true,
+  },
+  plugins: [
+    resolve(),
+    babel({
+      exclude: 'node_modules/**', // only transpile our source code
+    }),
+    uglify(),
+  ],
 };
